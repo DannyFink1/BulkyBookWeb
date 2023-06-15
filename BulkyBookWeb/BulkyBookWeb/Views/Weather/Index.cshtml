@@ -1,0 +1,54 @@
+﻿@model RegionWeatherData
+
+<link rel="stylesheet" href="~/css/weather-v2.css" />
+
+<innerBody>
+    <div class="box" id="box">
+        <form class="search-box" method="post">
+            <i class="bi bi-geo-alt-fill locIcon" ></i>
+            <input asp-for="Region.RegionName" class="form-control" placeholder="Enter Your Location" />
+            <button class="btn btn-primary btn-success" onclick="expand()">Search</button>
+        </form>
+        <div class="weather-box">
+            <img src="location-not-found.svg"  alt="Picture not Found" id="notFoundImg">
+            <div id="notFoundDiv"> Oops! Location Not Found</div>
+        </div>
+        <div class="weather-info">
+            <div class="humidity">
+                <i class="bi bi-water"></i>
+                @if (TempData["ReadyForWeather"] == "yes")
+                {
+                    @Model.Weather.Main.Humidity
+                    
+                }
+                %
+                <div>Humidity</div>
+            </div>
+            <div class="temperature">
+                <i class="bi bi-thermometer-half tempIcon"></i>
+                @if (TempData["ReadyForWeather"] == "yes")
+                {
+                    var modifiedTemp = Model.Weather.Main.Temp - 273.15;
+                    var modifiedTempFormatted = modifiedTemp.ToString("0.00");
+                    @modifiedTempFormatted
+                }
+                °C
+                <div>Temperature</div>
+            </div>
+    </div>
+</innerBody>
+
+@if(TempData["js"] == "yes")
+{
+    <script>
+        function expand() {
+            var obj = document.getElementById("box").style.height = "400px";
+
+        }
+        expand();
+    </script>
+}
+
+
+
+

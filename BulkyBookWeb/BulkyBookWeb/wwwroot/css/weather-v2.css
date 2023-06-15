@@ -1,0 +1,92 @@
+﻿:root {
+    --text: #001d3b;
+}
+
+innerBody {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-color: var(--text);
+    border-width: 8px;
+    border-radius: 15px;
+    height: 80px;
+    width: 400px;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+.search-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+}
+
+.search-box i {
+        font-size: 26px;
+}
+
+.search-box input {
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: var(--text);
+}
+
+
+.search-box input::placeholder {
+        color: var(--text);
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: capitalize;
+}
+
+.weather-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+    .weather-box img {
+        margin-top: 30px;
+        height: 100px;
+        display: none;
+    }
+
+    .weather-box div {
+        font-size: 26px;
+        font-weight: bold;
+        display: none;
+    }
+
+
+.weather-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 500;
+    color: var(--text);
+    margin-top:30px;
+}
+
+    .weather-info div {
+        margin: 0px;
+        width: 100%;
+    }
+
